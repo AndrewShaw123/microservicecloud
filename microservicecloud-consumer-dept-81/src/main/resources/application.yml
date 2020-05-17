@@ -1,0 +1,8 @@
+server:
+  port: 81
+#Eureka配置
+eureka:
+  client:
+    register-with-eureka: false #消费端不注册
+    service-url:
+      defaultZone: http://localhost:7001/eureka
