@@ -1,2 +1,3 @@
 D:\workspace\microservicecloud\microservicecloud-api\src\main\java\com\andrew\springcloud\service\DeptClientService.java
 D:\workspace\microservicecloud\microservicecloud-api\src\main\java\com\andrew\springcloud\entities\Dept.java
+D:\workspace\microservicecloud\microservicecloud-api\src\main\java\com\andrew\springcloud\service\DeptClientServiceFallBackFactory.java

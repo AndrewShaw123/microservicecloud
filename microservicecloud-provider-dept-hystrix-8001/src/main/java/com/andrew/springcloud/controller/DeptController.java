@@ -2,6 +2,7 @@ package com.andrew.springcloud.controller;
 
 import com.andrew.springcloud.entities.Dept;
 import com.andrew.springcloud.service.DeptService;
+import com.andrew.springcloud.service.impl.DeptServiceImpl;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -20,6 +21,7 @@ import java.util.List;
  * @author andrew
  * @date 2020/5/15
  */
+@SuppressWarnings("all")
 @RestController
 public class DeptController {
 
@@ -34,8 +36,12 @@ public class DeptController {
         return deptService.add(dept);
     }
 
+    /*
+     * @HystrixCommand(fallbackMethod = "processHystrix_Get")
+     * 用Feign代替，在接口上处理，统一，解耦
+     * @FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory = DeptClientServiceFallBackFactory.class)
+     * */
     @RequestMapping(value = "/dept/get/{id}",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod = "processHystrix_Get")
     public Dept add(@PathVariable("id") Long id){
         Dept dept = deptService.get(id);
         if(dept==null){

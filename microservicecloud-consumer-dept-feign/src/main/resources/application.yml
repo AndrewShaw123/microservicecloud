@@ -1,5 +1,10 @@
 server:
   port: 81
+
+feign:
+  hystrix:
+    enabled: true
+
 #Eureka配置
 eureka:
   client:
