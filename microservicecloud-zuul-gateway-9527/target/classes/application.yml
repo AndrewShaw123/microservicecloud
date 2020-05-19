@@ -1,0 +1,19 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: microservicecloud-zuul-gateway-9527
+#Eureka配置
+eureka:
+  instance:
+    instance-id: gateway-9572
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+info:
+  app.name: microservicecloud-zuul-gateway
+  company.name: www.andrew.com
+  build.artifactId: microservicecloud-zuul-gateway-9527
+  build.version: 1.0-SNAPSHOT
