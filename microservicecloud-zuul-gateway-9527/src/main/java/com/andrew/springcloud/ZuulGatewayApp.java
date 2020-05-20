@@ -7,6 +7,9 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 /**
  * ZuulGatewayApp Class
  * 访问地址 http://localhost:9527/microservicecloud-dept/dept/get/1
+ * |
+ * http://localhost:9527/andrew/mydept/dept/get/1
+ *
  * microservicecloud-dept微服务名称
  *
  * @author andrew

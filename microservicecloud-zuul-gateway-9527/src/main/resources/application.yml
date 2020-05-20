@@ -3,6 +3,15 @@ server:
 spring:
   application:
     name: microservicecloud-zuul-gateway-9527
+
+#隐藏微服务的名称，用其他代替
+zuul:
+  ignored-services: microservicecloud #把原来可以利用微服务名称的调用禁止 用"*"可以全部微服务的名称禁用
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+  prefix: /andrew #统一公共前缀
+
 #Eureka配置
 eureka:
   instance:
